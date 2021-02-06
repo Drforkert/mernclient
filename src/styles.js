@@ -11,7 +11,6 @@ export default makeStyles((theme) => ({
   },
   heading: {
     color: 'rgba(0,183,255, 1)',
-    fontSize: 'clamp(1.5rem, 6vw, 2rem)',
   },
   image: {
     marginLeft: '15px',
@@ -21,7 +20,7 @@ export default makeStyles((theme) => ({
   [theme.breakpoints.down('sm')]: {
      mainContainer: {
       flexDirection: 'column-reverse',
-    }
+    },
   },
   [theme.breakpoints.down('md')]: {
     mainContainer: {

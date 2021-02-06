@@ -6,18 +6,18 @@ export default makeStyles((theme) => ({
     borderRadius: 15,
     margin: '30px 0',
     display: 'flex',
+    padding: '1rem',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    padding: '10px 50px',
   },
   heading: {
-    color: 'rgba(0,183,255, 1)',
+    color: 'rgba(0,0,0, 1)',
     textDecoration: 'none',
+    fontSize: 'clamp(1.5rem, 5vw, 1.2rem)',
   },
   image: {
     marginLeft: '15px',
-    borderRadius: '20px',
   },
   toolbar: {
     display: 'flex',
@@ -41,4 +41,25 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
+  [theme.breakpoints.down('xs')]: {
+    heading: {
+      fontSize: '1.3rem',
+    },
+    toolbar: {
+      width: '100%',
+    },
+    userName: {
+      fontSize: '1.2rem',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }, 
+    appBar: {
+      flexDirection: 'column',
+    }
+    // profile: {
+    //   width: '120px',
+    //   fontSize: '1rem',
+    // },
+  }
 }));
