@@ -1,4 +1,4 @@
-import {CREATE, UPDATE, DELETE, FETCH_ALL} from '../constants/actionTypes';
+import {CREATE, UPDATE, DELETE, FETCH_ALL, LIKE} from '../constants/actionTypes';
 import * as api from '../api';
 
 export const getPosts = () => async (dispatch) => {
@@ -33,6 +33,19 @@ export const updatePost = (id, post) => async (dispatch) => {
     }
 };
 
+export const likePost = (id) => async (dispatch) => {
+    const user = JSON.parse(localStorage.getItem('profile'));
+
+    try {
+       const {data} = await api.likePost(id, user?.token);
+       
+       dispatch({type: LIKE, payload: data});
+    } catch (error) {
+        console.log(error)
+        
+    }
+}
+
 export const deletePost = (id) => async (dispatch) => {
     try {
         await api.deletePost(id)
@@ -42,19 +55,12 @@ export const deletePost = (id) => async (dispatch) => {
     }   
 };
 
-export const likePost = (id) => async (dispatch) => {
-    try {
-        const { data } = await api.likePost(id);
-        dispatch({type: UPDATE, payload: data});
-    } catch (error) {
-        console.log(error.message)
-    }
-};
+// export const likePost = (id) => async (dispatch) => {
+//     try {
+//         const { data } = await api.likePost(id);
+//         dispatch({type: UPDATE, payload: data});
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+// };
 
-export const createComment = (id, post) => async (dispatch) => {
-    try {
-        
-    } catch (error) {
-        console.log(error)
-    }
-}

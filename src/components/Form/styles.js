@@ -22,4 +22,18 @@ export default makeStyles((theme) => ({
   buttonSubmit: {
     marginBottom: 10,
   },
+  warning: {
+    fontSize: '2rem',
+    fontFamily: 'Poppins',
+  },
+  alert: {
+    fontSize: '1.5rem',
+    fontFamily: 'Poppins',
+    color:'#fff',
+  },
+  paperSmall: {
+    marginTop: '1rem',
+    padding: theme.spacing(4),
+    backgroundColor: 'black',
+  }
 }));

@@ -1,7 +1,10 @@
 body {
-    background: linear-gradient(90deg, #8e0e00, #1f1c18);
+    /* background: linear-gradient(45deg, #8e0e00, #1f1c18);
     background-size: 400% 400%;
-    animation: bodyAnim 8s linear infinite;
+    animation: bodyAnim 8s linear infinite; */
+    background-image: url("https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-attachment: fixed;
 }
 @keyframes bodyAnim {
     0%{

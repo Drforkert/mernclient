@@ -49,4 +49,8 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  name:{
+    fontSize: '1.2rem',
+    textTransform: 'uppercase',
+  },
 });

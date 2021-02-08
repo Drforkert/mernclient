@@ -44,10 +44,16 @@ const Form = ({ currentId, setCurrentId }) => {
 
             return (
             <Paper className={classes.paper}>
-                <Typography variant="h6" align="center">
-                    melde dich an um deine Erinnerung zu teilen! 
+                <Typography variant="h6" className={classes.warning} align="center">
+                    Meld dich an um deine Erinnerung zu teilen! 
                 </Typography> 
+                <Paper className={classes.paperSmall}>
+                    <Typography variant="h2" className={classes.alert} align="center">
+                        Und Posts der anderen zu Liken! :)  
+                    </Typography> 
+                </Paper>
             </Paper>
+            
             )
         };
 
@@ -56,8 +62,8 @@ const Form = ({ currentId, setCurrentId }) => {
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
                 <Typography variant="h6">{currentId ? 'Bearbeite' : 'Erstelle'} Eine Erinnerung</Typography>
-                <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
-                <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
+                <TextField name="title" variant="outlined" label="Titel" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
+                <TextField name="message" variant="outlined" label="Story" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
                 <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}/>
                 <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })} /></div>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Post</Button>

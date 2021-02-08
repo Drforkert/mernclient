@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import { deepPurple } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
@@ -8,16 +8,21 @@ export default makeStyles((theme) => ({
     display: 'flex',
     padding: '1rem',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   heading: {
     color: 'rgba(0,0,0, 1)',
     textDecoration: 'none',
-    fontSize: 'clamp(1.5rem, 5vw, 1.2rem)',
+    fontFamily: 'Poppins',
+    fontSize: 'clamp(2rem, 5vw, 1.2rem)',
+    marginLeft: '2rem',
   },
   image: {
-    marginLeft: '15px',
+    marginLeft: '2rem',
+    border: '3px solid black',
+    borderRadius: '5px',
+    objectFit: 'cover',
   },
   toolbar: {
     display: 'flex',
@@ -41,12 +46,18 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
+  a: {
+    textDecoration: 'none',
+    color: 'white',
+    fontSize: '1.2rem',
+  },
   [theme.breakpoints.down('xs')]: {
     heading: {
       fontSize: '1.3rem',
     },
     toolbar: {
       width: '100%',
+      justifyContent: 'center',
     },
     userName: {
       fontSize: '1.2rem',
@@ -56,10 +67,7 @@ export default makeStyles((theme) => ({
     }, 
     appBar: {
       flexDirection: 'column',
-    }
-    // profile: {
-    //   width: '120px',
-    //   fontSize: '1rem',
-    // },
-  }
+      justifyContent: 'space-evenly',
+    },
+  }, 
 }));
